@@ -4,7 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Seminar extends Model
+class seminar extends Model
 {
-     protected $fillable = ['nama','nama_arab','nis','usercode','email','kota','tgl_lahir','phone','alamat','program_id','status'];
+	protected $table = 'seminar';
+    protected $fillable = ['judul','tanggal','harga','status'];
 }

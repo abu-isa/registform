@@ -25,7 +25,15 @@ class AdddataController extends Controller {
 		$alamat = $request->input('alamat');
 		$created_at = new Carbon();
 		$created_at ->timezone('Asia/Jakarta');
-		$data = array("name"=>$name,"email"=>$email,"mobile_number"=>$mobile_number,"pilihan"=>$pilihan,"alamat"=>$alamat, "created_at"=>$created_at, "status_pembayaran"=>'pending');
+		$data = array(
+			"name"=>$name,
+			"email"=>$email,
+			"mobile_number"=>$mobile_number,
+			"pilihan"=>$pilihan,
+			"alamat"=>$alamat, 
+			"created_at"=>$created_at, 
+			"status_pembayaran"=>'pending'
+		);
 		DB::table('form')->insert($data);
 
 		$form = DB::table('form')->where('email',$email)->get();

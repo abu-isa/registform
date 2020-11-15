@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Seminar;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 use App\Http\Requests;
 
@@ -15,7 +17,10 @@ class SeminarController extends Controller
      */
     public function index()
     { 
-        return view('admin/list_seminar');
+        // $seminar = DB::table('seminar')->get();
+        $seminar = Seminar::all();
+        
+        return view('admin.list_seminar', ['seminar' => $seminar]);
     }
 
     /**
