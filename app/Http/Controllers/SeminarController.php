@@ -14,8 +14,8 @@ class SeminarController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view('list_seminar');
+    { 
+        return view('admin/list_seminar');
     }
 
     /**
