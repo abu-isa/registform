@@ -31,5 +31,6 @@ Route::get('/home','ShowseminarController@showhome');
 
 Route::get('/admin','LoginController@index');
 Route::get('/listseminar','SeminarController@index');
+Route::get('/listregistration','RegistrationController@index');
 
 // Route::post('save','AdddataController@insertdatabase');

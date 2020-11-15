@@ -27,21 +27,23 @@
                 <tbody>
                   <tr>
                     <th><i ></i> No</th>
-                    <th><i class="icon_profile"></i> Judul Seminar</th>
-                    <th><i class="icon_calendar"></i> Tanggal</th>
-                    <th><i class="icon_mail_alt"></i> Harga</th>
+                    <th><i class="icon_profile"></i> Nama</th>
+                    <th><i class="icon_calendar"></i> Email</th>
+                    <th><i class="icon_mail_alt"></i> HP</th>
+                    <th><i class="icon_pin_alt"></i> Alamat</th>
                     <th><i class="icon_pin_alt"></i> Status</th>
                     <th><i class="icon_cogs"></i> Action</th>
                   </tr>
-                  @foreach( $seminar as $data ) 
+                  @foreach( $daftar as $data ) 
                   <tr>
                     <td></td>
-                    <td>{{ $data->judul }}</td>
-                    <td>{{ $data->tanggal }}</td>
-                    <td>{{ $data->harga }}</td>
-                    <td>{{ $data->status }}</td>
-                    <td>
-                      <div class="btn-group">
+                    <td>{{ $data->name }}</td>
+                    <td>{{ $data->email }}</td>
+                    <td>{{ $data->mobile_number }}</td>
+                    <td>{{ $data->alamat }}</td>
+                    <td>{{ $data->status_pembayaran }}</td>
+                    <td width="150px">
+                      <div class="btn-group" style="float: left;">
                         <a class="btn btn-primary" href="#"><i class="icon_plus_alt2"></i></a>
                         <a class="btn btn-danger" href="#"><i class="icon_close_alt2"></i></a>
                       </div>
