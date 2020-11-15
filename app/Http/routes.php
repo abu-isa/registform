@@ -29,7 +29,7 @@ Route::get('homepending/{id}','ShowseminarController@showpending');
 Route::get('/home','ShowseminarController@showhome');
 
 
-Route::get('/admin','LoginController@index');
+Route::get('/admin','AdminController@index');
 Route::get('/listseminar','SeminarController@index');
 Route::get('/listregistration','RegistrationController@index');
 

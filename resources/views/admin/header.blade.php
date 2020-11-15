@@ -4,12 +4,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Creative - Bootstrap 3 Responsive Admin Template">
-  <meta name="author" content="GeeksLabs">
-  <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
+  <meta name="description" content="Sistem Informasi Pendaftaran Seminar Online">
+  <meta name="author" content="Tori Abu Isa">
+  <meta name="keyword" content="Sistem Informasi Pendaftaran Seminar Online">
   <link rel="shortcut icon" href="img/favicon.png">
 
-  <title>Basic Table | Creative - Bootstrap 3 Responsive Admin Template</title>
+  <title>.:SIDANAR:.</title>
 
   <!-- Bootstrap CSS -->
   <link href="{{ asset('template/css/bootstrap.min.css') }}" rel="stylesheet">
