@@ -18,6 +18,8 @@ class CreateSeminarsTable extends Migration
             $table->date('tanggal');
             $table->string('harga');
             $table->string('status');
+            $table->string('images')->nullable()->change();
+            $table->timestamps();
         });
     }
 

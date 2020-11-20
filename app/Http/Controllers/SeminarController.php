@@ -20,7 +20,7 @@ class SeminarController extends Controller
         // $seminar = DB::table('seminar')->get();
         $seminar = Seminar::all();
         
-        return view('admin.list_seminar', ['seminar' => $seminar]);
+        return view('admin.seminar.list_seminar', ['seminar' => $seminar]);
     }
 
     /**
@@ -41,14 +41,14 @@ class SeminarController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'judul' => 'required',
-            'tanggal' => 'required',
-            'harga' => 'required',
-            'status' => '1'          
-        ]);
+        // $request->validate([
+        //     'judul' => 'required',
+        //     'tanggal' => 'required',
+        //     'harga' => 'required',
+        //     'status' => '1'          
+        // ]);
         $currentDay = date('d');
-        if($currentDay>$tanggal){
+        if($currentDay>$request->tanggal){
             return redirect()->back()->with('alert', 'Tanggal yang dimasukan sudah lewat!');
         }else{
             Seminar::create($request->all());
@@ -75,7 +75,7 @@ class SeminarController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('admin.seminar.edit_seminar', compact('id'));
     }
 
     /**
@@ -87,7 +87,14 @@ class SeminarController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $id::where('id', $id->id)
+                ->update([
+                    'judul'      => $request->judul,
+                    'tanggal'      => $request->tanggal,
+                    'harga'      => $request->harga,
+                    'status'      => $request->status 
+                ]);
+        return redirect('/listseminar')->with('status', 'Data berhasil di rubah...!');
     }
 
     /**
@@ -98,6 +105,8 @@ class SeminarController extends Controller
      */
     public function destroy($id)
     {
-        //
+        
+        Seminar::destroy($id->id);
+        return redirect('/listseminar')->with('status', 'Data berhasil dihapus...!');
     }
 }
