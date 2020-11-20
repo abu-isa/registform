@@ -30,7 +30,11 @@ Route::get('/home','ShowseminarController@showhome');
 
 
 Route::get('/admin','AdminController@index');
+//seminar
 Route::get('/listseminar','SeminarController@index');
+Route::get('/add_seminar','SeminarController@create');
+Route::post('/store_seminar','SeminarController@store');
+//registration
 Route::get('/listregistration','RegistrationController@index');
 
 // Route::post('save','AdddataController@insertdatabase');

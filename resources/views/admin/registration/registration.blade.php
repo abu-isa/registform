@@ -34,9 +34,10 @@
                     <th><i class="icon_pin_alt"></i> Status</th>
                     <th><i class="icon_cogs"></i> Action</th>
                   </tr>
+                  <?php $no = 1; ?>
                   @foreach( $daftar as $data ) 
-                  <tr>
-                    <td></td>
+                  <tr>                    
+                    <td><?php echo $no++;?></td>
                     <td>{{ $data->name }}</td>
                     <td>{{ $data->email }}</td>
                     <td>{{ $data->mobile_number }}</td>

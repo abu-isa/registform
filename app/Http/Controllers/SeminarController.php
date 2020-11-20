@@ -30,7 +30,7 @@ class SeminarController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.seminar.add_seminar');
     }
 
     /**
@@ -41,7 +41,19 @@ class SeminarController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'judul' => 'required',
+            'tanggal' => 'required',
+            'harga' => 'required',
+            'status' => '1'          
+        ]);
+        $currentDay = date('d');
+        if($currentDay>$tanggal){
+            return redirect()->back()->with('alert', 'Tanggal yang dimasukan sudah lewat!');
+        }else{
+            Seminar::create($request->all());
+            return redirect('/listseminar')->with('success', 'Seminar berhasil dimasukan!');
+        }
     }
 
     /**

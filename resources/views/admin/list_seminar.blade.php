@@ -20,7 +20,7 @@
           <div class="col-lg-12">
             <section class="panel">
               <header class="panel-heading">
-                Advanced Table
+                <a class="btn btn-info" href="{{ url('/add_seminar') }}" title="Add seminar"><span class="icon_house_alt"></span> Create data</a>
               </header>
 
               <table class="table table-striped table-advance table-hover">
@@ -33,9 +33,10 @@
                     <th><i class="icon_pin_alt"></i> Status</th>
                     <th><i class="icon_cogs"></i> Action</th>
                   </tr>
+                  <?php $no = 1; ?>
                   @foreach( $seminar as $data ) 
                   <tr>
-                    <td></td>
+                    <td><?php echo $no++;?></td>
                     <td>{{ $data->judul }}</td>
                     <td>{{ $data->tanggal }}</td>
                     <td>{{ $data->harga }}</td>
