@@ -22,7 +22,6 @@ class ShowseminarController extends Controller
 
         $form = DB::table('form')->where('id',$id)->get();
         $data = DB::table('seminar')->where('id',$form[0]->pilihan)->get();
-        // dd($data);   
         session()->flash('notifsuccess','Pembayaran telah diterima, terimakasih!');
         return view('ringkasanpembayaran',['data' => $data,'form'=>$form]);
     }
@@ -32,7 +31,6 @@ class ShowseminarController extends Controller
 
         $form = DB::table('form')->where('id',$id)->get();
         $data = DB::table('seminar')->where('id',$form[0]->pilihan)->get();
-        // dd($data);   
         session()->flash('notifpending','Pembayaran belum diterima, segera selesaikan pembayaran!');
         return view('ringkasanpembayaran',['data' => $data,'form'=>$form]);
     }
