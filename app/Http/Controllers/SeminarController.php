@@ -47,11 +47,21 @@ class SeminarController extends Controller
         //     'harga' => 'required',
         //     'status' => '1'          
         // ]);
+
+
+
         $currentDay = date('d');
         if($currentDay>$request->tanggal){
             return redirect()->back()->with('alert', 'Tanggal yang dimasukan sudah lewat!');
         }else{
-            Seminar::create($request->all());
+            $data = $request->all();
+            $photo = $request->file('photo')->getClientOriginalName();
+            $destination = base_path() . '/public/uploads';
+            $request->file('photo')->move($destination, $photo);
+
+            $data['images'] = $photo;
+
+            Seminar::create($data);
             return redirect('/listseminar')->with('success', 'Seminar berhasil dimasukan!');
         }
     }

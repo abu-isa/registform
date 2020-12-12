@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Support\Facades\Schema;
 
 class CreateSeminarsTable extends Migration
 {
@@ -12,13 +13,13 @@ class CreateSeminarsTable extends Migration
      */
     public function up()
     {
-        Schema::create('seminar', function (Blueprint $table) {
+        Schema::create('seminars', function (Blueprint $table) {
             $table->increments('id');
             $table->string('judul');
             $table->date('tanggal');
             $table->string('harga');
             $table->string('status');
-            $table->string('images')->nullable()->change();
+            $table->string('images')->nullable();
             $table->timestamps();
         });
     }
@@ -30,6 +31,6 @@ class CreateSeminarsTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('seminars');
     }
 }

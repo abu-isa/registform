@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Support\Facades\Schema;
 
 class CreateMidtransTable extends Migration
 {
@@ -23,7 +24,7 @@ class CreateMidtransTable extends Migration
             $table->string('transaction_status');
             $table->string('fraud_status');
             $table->string('finish_redirect_url');   
-             
+            $table->timestamps();
         });
     }
 
@@ -34,6 +35,6 @@ class CreateMidtransTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('midtrans');
     }
 }

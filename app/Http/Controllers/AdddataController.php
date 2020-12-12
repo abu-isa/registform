@@ -34,10 +34,10 @@ class AdddataController extends Controller {
 			"created_at"=>$created_at, 
 			"status_pembayaran"=>'pending'
 		);
-		DB::table('form')->insert($data);
+		DB::table('forms')->insert($data);
 
-		$form = DB::table('form')->where('email',$email)->get();
-		$seminar = DB::table('seminar')->where('id',$pilihan)->get();
+		$form = DB::table('forms')->where('email',$email)->get();
+		$seminar = DB::table('seminars')->where('id',$pilihan)->get();
 		return view('confirmationpage',['form' => $form,'seminar' => $seminar]);
 	}
 

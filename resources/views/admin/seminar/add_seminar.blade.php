@@ -23,9 +23,9 @@
                 Create seminar
               </header>
               <div class="panel-body">
-              <form method="post" action="/store_seminar">
-              	 <input type ='hidden' name ='_token' value ='<?php echo csrf_token(); ?>' enctype="multipart/form-data">
-                  <div class="form-group col-sm-6">
+              <form method="post" action="/store_seminar" enctype="multipart/form-data">
+              {{ csrf_field() }}
+              	  <div class="form-group col-sm-6">
                     <label for="judul">Seminar</label>
                     <input type="text" class="form-control" id="judul" name="judul">
                   </div>
@@ -39,7 +39,7 @@
                   </div>
                   <div class="form-group  col-sm-6">
                     <label for="images">Image</label>
-                    <input type="file" id="images" name="image">
+                    <input type="file" id="images" name="photo">
                   </div>
                   <input type="hidden" name="status" value="1">
                   <button type="submit" class="btn btn-primary">Submit</button>

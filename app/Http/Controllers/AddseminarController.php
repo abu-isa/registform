@@ -16,7 +16,7 @@ class AddseminarController extends Controller {
 		if($currentDay>$tanggal){
 			return redirect()->back()->with('alert', 'Tanggal yang dimasukan sudah lewat!');
 		}else{
-			DB::table('seminar')->insert($data);
+			DB::table('seminars')->insert($data);
 			return redirect()->back()->with('success', 'Seminar berhasil dimasukan!');
 		}
 	}

@@ -51,7 +51,7 @@
 					@foreach($data as $seminar)
 						<div class="4u">
 							<section class="special box">
-								<i class="icon fa-area-chart major"></i>
+							<img src="{{ url('uploads') }}/{{ $seminar->images }}" class="img-responsive">
 								<h3>{{$seminar->judul}}</h3>
 								<p>{{$seminar->tanggal}}</p>
 							</section>

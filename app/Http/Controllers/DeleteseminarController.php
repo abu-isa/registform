@@ -12,7 +12,7 @@ class DeleteseminarController extends Controller
     	$currentDay = date('d');
     	$currentMonth = date('m');
 
-        $data = DB::table('seminar')->select('id','judul','tanggal')->whereDay('tanggal','>',$currentDay)->whereMonth('tanggal','=',$currentMonth)->where('status','1')->get();
+        $data = DB::table('seminars')->select('id','judul','tanggal')->whereDay('tanggal','>',$currentDay)->whereMonth('tanggal','=',$currentMonth)->where('status','1')->get();
         return view('delete',['data' => $data]);
 	}
 
