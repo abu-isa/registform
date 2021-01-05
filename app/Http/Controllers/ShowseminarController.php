@@ -13,8 +13,8 @@ class ShowseminarController extends Controller
     public function show(){
     	$currentDay = date('d');
     	$currentMonth = date('m');
-
-        $data = DB::table('seminars')->select('judul','tanggal','id')->whereDay('tanggal','>',$currentDay)->whereMonth('tanggal','=',$currentMonth)->where('status','1')->orderBy('tanggal', 'asc')->get();
+        $dateDay = date('Y-m-d');
+        $data = DB::table('seminars')->select('judul','tanggal','id')->where('tanggal','>',$dateDay)->where('status','1')->orderBy('tanggal', 'asc')->get();
         return view('daftarseminar',['data' => $data]);
     }
 
@@ -39,8 +39,8 @@ class ShowseminarController extends Controller
     public function showhome(){
         $currentDay = date('d');
         $currentMonth = date('m');
-
-        $data = DB::table('seminars')->select('judul','tanggal','id')->whereDay('tanggal','>',$currentDay)->whereMonth('tanggal','=',$currentMonth)->where('status','1')->orderBy('tanggal', 'asc')->get();
+        $dateDay = date('Y-m-d');
+        $data = DB::table('seminars')->select('judul','tanggal','id','images')->where('tanggal','>',$dateDay)->where('status','1')->orderBy('tanggal', 'asc')->get();
         return view('halamandepan',['data' => $data]);
     }
 }

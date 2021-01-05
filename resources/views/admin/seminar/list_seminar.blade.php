@@ -7,9 +7,8 @@
       <section class="wrapper">
         <div class="row">
           <div class="col-lg-12">
-            <h3 class="page-header"><i class="fa fa-table"></i> Table</h3>
             <ol class="breadcrumb">
-              <li><i class="fa fa-home"></i><a href="index.html">Home</a></li>
+              <li><i class="fa fa-home"></i><a href="{{ url('/admin')}}">Home</a></li>
               <li><i class="fa fa-table"></i>Table</li>
               <li><i class="fa fa-th-list"></i>Basic Table</li>
             </ol>
@@ -27,6 +26,7 @@
                 <tbody>
                   <tr>
                     <th><i ></i> No</th>
+                    <th><i class="icon_profile"></i> Photo</th>
                     <th><i class="icon_profile"></i> Judul Seminar</th>
                     <th><i class="icon_calendar"></i> Tanggal</th>
                     <th><i class="icon_mail_alt"></i> Harga</th>
@@ -37,6 +37,7 @@
                   @foreach( $seminar as $data ) 
                   <tr>
                     <td><?php echo $no++;?></td>
+                    <td><img src="{{ url('uploads') }}/{{ $data->images }}" class="img-responsive" width="60px" height="60px"></td>
                     <td>{{ $data->judul }}</td>
                     <td>{{ $data->tanggal }}</td>
                     <td>{{ $data->harga }}</td>
@@ -44,10 +45,10 @@
                     <td>
                       <div class="btn-group">
                         <a class="btn btn-primary" href="/edit_seminar/{{ $data->id }}"><i class="icon_plus_alt2"></i></a>
-                        <!-- <a class="btn btn-danger" href="{{ url('/delete_seminar') }}/<?php echo $data->id ?>"><i class="icon_close_alt2"></i></a> -->
-                        <form action="/delete_seminar/{{ $data->id }}" method="post" class="d-inline">
-                          <input type ='hidden' name ='_token' value ='<?php echo csrf_token(); ?>' >
-                         
+                        <!-- <a class="btn btn-danger" href="{{ url('/delete_seminar') }}/{{ $data->id }}"><i class="icon_close_alt2"></i></a> -->
+                        <form action="/delete_seminar/{{ $data->id }}" method="post" class="d-inline" enctype="multipart/form-data">
+                        {{ csrf_field() }}
+                         <input type='hidden' name='_method' value='DELETE' >                         
                         <button type="submit" class="btn btn-danger" ><i class="icon_close_alt2"></i></button>
                       </form>
                       </div>

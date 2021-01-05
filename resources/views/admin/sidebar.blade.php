@@ -5,20 +5,16 @@
         <!-- sidebar menu start-->
         <ul class="sidebar-menu">
           <li class="">
-            <a class="" href="index.html">
+            <a class="" href="{{ url('/admin') }}">
                           <i class="icon_house_alt"></i>
                           <span>Dashboard</span>
                       </a>
           </li>
-          <li class="sub-menu">
-            <a href="javascript:;" class="">
+          <li>
+            <a class="" href="{{ url('/listseminar') }}">
                           <i class="icon_desktop"></i>
-                          <span>Master Data</span>
-                          <span class="menu-arrow arrow_carrot-right"></span>
+                          <span>Seminar</span>
                       </a>
-            <ul class="sub">
-              <li><a class="" href="{{ url('/listseminar') }}">Seminar</a></li>
-            </ul>
           </li>
 
           <li>
@@ -28,7 +24,7 @@
                       </a>
           </li>
           <li>
-            <a class="" href="{{ url('/listregistration') }}">
+            <a class="" href="{{ url('/report') }}">
                           <i class="icon_piechart"></i>
                           <span>Report</span>
 

@@ -5,40 +5,28 @@ namespace App\Http\Controllers;
 use App\Seminar;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-
+use Illuminate\Support\Facades\File;
 use App\Http\Requests;
 
 class SeminarController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     { 
-        // $seminar = DB::table('seminar')->get();
-        $seminar = Seminar::all();
+        // $currentDay = date('Y-m-d');
+        $seminar = Seminar::all();  
         
+        // $seminar = Seminar::where('status', '>', 0)
+            //    ->get();
+
         return view('admin.seminar.list_seminar', ['seminar' => $seminar]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         return view('admin.seminar.add_seminar');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         // $request->validate([
@@ -50,7 +38,7 @@ class SeminarController extends Controller
 
 
 
-        $currentDay = date('d');
+        $currentDay = date('Y-m-d');
         if($currentDay>$request->tanggal){
             return redirect()->back()->with('alert', 'Tanggal yang dimasukan sudah lewat!');
         }else{
@@ -66,57 +54,49 @@ class SeminarController extends Controller
         }
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
-        //
+        $seminar = Seminar::find($id);
+        return view('admin.seminar.show_seminar')->with('seminar', $seminar);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
-        return view('admin.seminar.edit_seminar', compact('id'));
-    }
+        // $seminar = Seminar::where('id', $id)->first();
+        // return view('admin.seminar.edit_seminar')->with('seminar', $seminar);
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+
+        $seminar = Seminar::find($id);
+        // dd($seminar);
+        return view('admin.seminar.edit_seminar', compact('seminar'));
+    }
+    
+    public function update(Request $request)
     {
-        $id::where('id', $id->id)
-                ->update([
-                    'judul'      => $request->judul,
-                    'tanggal'      => $request->tanggal,
-                    'harga'      => $request->harga,
-                    'status'      => $request->status 
-                ]);
+        $update = Seminar::where('id', $request->id)->first();
+        $update->judul      = $request['judul'];
+        $update->tanggal    = $request['tanggal'];
+        $update->harga      = $request['harga'];
+        $update->status     = $request['status'];
+
+        if($request->file('images') == "")        {
+            $update->images  = $update->images;
+        }else{
+            $file       = $request->file('images');
+            $fileName   = $file->getClientOriginalName();
+            $request->file('images')->move("uploads/", $fileName);
+            $update->images = $fileName;
+        }
+        $update->update();
         return redirect('/listseminar')->with('status', 'Data berhasil di rubah...!');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        
-        Seminar::destroy($id->id);
+    public function destroy(Seminar $seminar)
+    {        
+        Seminar::destroy($seminar->id); 
+        // $delete->delete();
+        // Seminar::destroy($seminar->id);
+        // DB::table('seminars')->where('id', '=', $seminar->id)->delete();
         return redirect('/listseminar')->with('status', 'Data berhasil dihapus...!');
     }
 }
