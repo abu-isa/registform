@@ -10,6 +10,9 @@
 		<script src="js/skel.min.js"></script>
 		<script src="js/skel-layers.min.js"></script>
 		<script src="js/init.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 		<noscript>
 			<link rel="stylesheet" href="css/skel.css" />
 			<link rel="stylesheet" href="css/style.css" />
@@ -20,7 +23,10 @@
 
 		<!-- Header -->
 		<header id="header" class="skel-layers-fixed">
-			<h1><a href="/">The Jakarta Post</a></h1>
+		<img src="images/logo-jp1.jpg" style="padding-left: 10px; padding-top: 10px; padding-bottom: 10px;" alt="logo">
+
+<!-- 			<h1><a href="/">The Jakarta Post</a></h1> -->
+
 			<nav id="nav">
 				<ul>
 					<li><span class="lnr lnr-envelope"></span> <span class="text">Email: life@jakpost.com</span></a></li>
@@ -32,10 +38,11 @@
 		<!-- Banner -->
 		<section id="banner">
 			<div class="inner">
-				<h2>Hello!</h2>
-				<p>Webinar Registries</a></p>
+				<h2>Welcome</h2>
+				<p>Click here to register 
+				<br>for the webinar</a></p>
 				<ul class="actions">
-					<li><a href="/daftar" class="button big special">Register!</a></li>
+					<li><a href="/daftar" class="button big special">Register now</a></li>
 				</ul>
 			</div>
 		</section>
@@ -54,7 +61,9 @@
 							<img src="{{ url('uploads') }}/{{ $seminar->images }}" class="img-responsive" width="100px" height="100px">
 								<h3>{{$seminar->judul}}</h3>
 								<p>{{$seminar->tanggal}}</p>
+								<p><a href="/detail/{{ $seminar->id }}" class="btn btn-info btn-lg" >Detail</a></p>
 							</section>
+							
 						</div>
 					@endforeach
 				</div>
@@ -71,9 +80,9 @@
 								<h3>Read more</h3>
 								<ul class="alt">
 									<li><a href="https://www.thejakartapost.com/news">News</a></li>
-									<li><a href="https://www.thejakartapost.com/news/national">National</a></li>
-									<li><a href="https://www.thejakartapost.com/news/business">Business</a></li>
-									<li><a href="https://www.thejakartapost.com/paper/todays-paper">Paper Edition</a></li>
+									<li><a href="https://www.thejakartapost.com/life">Lifestyle</a></li>
+									<li><a href="https://www.thejakartapost.com/travel">Travel</a></li>
+									<li><a href="https://www.thejakartapost.com/multimedia">Multimedia</a></li>
 								</ul>
 							</div>
 							<div class="6u">
@@ -89,12 +98,15 @@
 					</div>
 					<div class="6u">
 						<h2>Our Office</h2>
-						<p>The Jkt Post Building, Jl. Palmerah Barat No.142-143 1 2, RT.1/RW.2, Gelora, Kecamatan Tanah Abang,Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10270</p>
+						<p><b>PT Bina Media Tenggara</b></p>
+						<p>Jl. Palmerah Barat 142-143, Jakarta 10270 
+						Tel : 5300476, 5300478, 5306970 
+						Fax: +62-21-5350050, 5306971 
+						Email: editorial [at] thejakartapost.com</p>
 					</div>
 				</div>
 				<ul class="copyright">
 					<li>&copy; The Jakarta Post</li>
-					<li>Design: <a href="https://www.instagram.com/calvinandersenn/">Calvin Andersen</a></li>
 				</ul>
 			</div>
 		</footer>

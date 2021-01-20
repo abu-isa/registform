@@ -34,12 +34,7 @@
   <link href="{{ asset('template/css/style-responsive.css') }}" rel="stylesheet" />
   <link href="{{ asset('template/css/xcharts.min.css') }}" rel=" stylesheet">
   <link href="{{ asset('template/css/jquery-ui-1.10.4.min.css') }}" rel="stylesheet">
-  <!-- =======================================================
-    Theme Name: NiceAdmin
-    Theme URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-    Author: BootstrapMade
-    Author URL: https://bootstrapmade.com
-  ======================================================= -->
+ 
 </head>
 
 <body>
@@ -53,20 +48,8 @@
       </div>
 
       <!--logo start-->
-      <a href="{{ url('/admin') }}" class="logo">Nice <span class="lite">Admin</span></a>
+      <a href="{{ url('/admin/home') }}" class="logo">SI<span class="lite">DANAR</span></a>
       <!--logo end-->
-
-      <div class="nav search-row" id="top_menu">
-        <!--  search form start -->
-        <ul class="nav top-menu">
-          <li>
-            <form class="navbar-form">
-              <input class="form-control" placeholder="Search" type="text">
-            </form>
-          </li>
-        </ul>
-        <!--  search form end -->
-      </div>
 
       <div class="top-nav notification-row">
         <!-- notificatoin dropdown start-->
@@ -78,7 +61,7 @@
                             <span class="profile-ava">
                                 <img alt="" src="img/avatar1_small.jpg">
                             </span>
-                            <span class="username">Jenifer Smith</span>
+                            <span class="username">Admin</span>
                             <b class="caret"></b>
                         </a>
             <ul class="dropdown-menu extended logout">
@@ -106,7 +89,7 @@
         <!-- sidebar menu start-->
         <ul class="sidebar-menu">
           <li class="">
-            <a class="" href="{{ url('/admin') }}">
+            <a class="" href="{{ url('/admin/home') }}">
                           <i class="icon_house_alt"></i>
                           <span>Dashboard</span>
                       </a>
@@ -148,70 +131,21 @@
         <div class="row">
           <div class="col-lg-12">
             <ol class="breadcrumb">
-              <li><i class="fa fa-home"></i><a href="{{ url('/admin') }}">Home</a></li>
+              <li><i class="fa fa-home"></i><a href="{{ url('/admin/home') }}">Home</a></li>
               <li><i class="fa fa-laptop"></i>Dashboard</li>
             </ol>
           </div>
         </div>
-
-        <div class="row">
-          <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-            <div class="info-box blue-bg">
-              <i class="fa fa-cloud-download"></i>
-              <div class="count">6.674</div>
-              <div class="title">Download</div>
-            </div>
-            <!--/.info-box-->
-          </div>
-          <!--/.col-->
-
-          <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-            <div class="info-box brown-bg">
-              <i class="fa fa-shopping-cart"></i>
-              <div class="count">7.538</div>
-              <div class="title">Purchased</div>
-            </div>
-            <!--/.info-box-->
-          </div>
-          <!--/.col-->
-
-          <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-            <div class="info-box dark-bg">
-              <i class="fa fa-thumbs-o-up"></i>
-              <div class="count">4.362</div>
-              <div class="title">Order</div>
-            </div>
-            <!--/.info-box-->
-          </div>
-          <!--/.col-->
-
-          <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-            <div class="info-box green-bg">
-              <i class="fa fa-cubes"></i>
-              <div class="count">1.426</div>
-              <div class="title">Stock</div>
-            </div>
-            <!--/.info-box-->
-          </div>
-          <!--/.col-->
-
-        </div>
         <!--/.row-->
 
-
-        
-
-
         <!-- Today status end -->
-
-
 
         <div class="row">
 
           <div class="col-lg-12 col-md-12">
             <div class="panel panel-default">
               <div class="panel-heading">
-                <h2><i class="fa fa-flag-o red"></i><strong>Registered Users</strong></h2>
+                <h2><i class="fa fa-flag-o red"></i><strong>Participants List <em>(Daftar Peserta)</em></strong></h2>
                 <div class="panel-actions">
                   <a href="{{ url('/admin') }}#" class="btn-setting"><i class="fa fa-rotate-right"></i></a>
                   <a href="{{ url('/admin') }}#" class="btn-minimize"><i class="fa fa-chevron-up"></i></a>
@@ -265,7 +199,7 @@
             Licensing information: https://bootstrapmade.com/license/
             Purchase the pro version form: https://bootstrapmade.com/buy/?theme=NiceAdmin
           -->
-          Designed by <a href="">SiDANAR</a>
+          Designed by <a href="">SIDANAR</a>
         </div>
       </div>
     </section>

@@ -29,6 +29,20 @@
                     <input type="text" class="form-control" id="judul" name="judul">
                   </div>
                   <div class="form-group col-sm-6">
+                    <label for="deskripsi">Deskripsi</label>
+                    <textarea class="form-control" id="deskripsi" name="deskripsi"></textarea>
+                  </div>
+                  
+                  <div class="form-group col-sm-6">
+                    <label for="speaker">Speaker</label>
+                    <textarea class="form-control" id="deskripsi" name="speaker"></textarea>
+                  </div>
+                  
+                  <div class="form-group col-sm-6">
+                    <label for="moderator">Moderator</label>
+                    <textarea class="form-control" id="moderator" name="moderator"></textarea>
+                  </div>
+                  <div class="form-group col-sm-6">
                     <label for="tanggal">Date</label>
                     <input type="date" class="form-control" id="tanggal" name="tanggal">
                   </div>
@@ -38,7 +52,7 @@
                   </div>
                   <div class="form-group  col-sm-6">
                     <label for="images">Image</label>
-                    <input type="file" id="images" name="photo">
+                    <input type="file" id="images" name="photo" required>
                   </div>
                   <input type="hidden" name="status" value="1">
                   <button type="submit" class="btn btn-primary">Submit</button>

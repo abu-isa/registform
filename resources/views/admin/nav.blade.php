@@ -7,20 +7,8 @@
       </div>
 
       <!--logo start-->
-      <a href="index.html" class="logo">SI <span class="lite">DANAR</span></a>
+     <a href="{{ url('/admin/home') }}" class="logo">SI<span class="lite">DANAR</span></a>
       <!--logo end-->
-
-      <div class="nav search-row" id="top_menu">
-        <!--  search form start -->
-        <ul class="nav top-menu">
-          <li>
-            <form class="navbar-form">
-              <input class="form-control" placeholder="Search" type="text">
-            </form>
-          </li>
-        </ul>
-        <!--  search form end -->
-      </div>
 
       <div class="top-nav notification-row">
         <!-- notificatoin dropdown start-->
@@ -32,7 +20,7 @@
                             <span class="profile-ava">
                                 <img alt="" src="img/avatar1_small.jpg">
                             </span>
-                            <span class="username">Jenifer Smith</span>
+                            <span class="username">Admin</span>
                             <b class="caret"></b>
                         </a>
             <ul class="dropdown-menu extended logout">

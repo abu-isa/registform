@@ -1,4 +1,4 @@
-@include('admin/header')
+  @include('admin/header')
 @include('admin/nav')
 @include('admin/sidebar')
 
@@ -8,10 +8,10 @@
         <div class="row">
           <div class="col-lg-12">
             <ol class="breadcrumb">
-              <li><i class="fa fa-home"></i><a href="{{ url('/admin') }}">Home</a></li>
-              <li><i class="fa fa-table"></i><a href="{{ url('/listregistration') }}">Registrasi</a></li>
-              <li><i class="fa fa-th-list"></i>Create Data</li>
-            </ol>
+              <li><i class="fa fa-home"></i><a href="{{ url('/admin/home') }}">Home</a></li>
+              <li><i class="fa fa-th-list"></i>Registrasi</li>
+<!--               <li><i class="fa fa-table"></i><a href="{{ url('/listregistration') }}">Registrasi</a></li> -->
+           </ol>
           </div>
         </div>
         <!-- page start-->
@@ -19,19 +19,22 @@
           <div class="col-lg-12">
             <section class="panel">
               <header class="panel-heading">
-                Registrasi
+                Status Pembayaran
               </header>
 
               <table class="table table-striped table-advance table-hover">
                 <tbody>
                   <tr>
                     <th><i ></i> No</th>
-                    <th><i class="icon_profile"></i> Nama</th>
-                    <th><i class="icon_calendar"></i> Email</th>
-                    <th><i class="icon_mail_alt"></i> HP</th>
-                    <th><i class="icon_pin_alt"></i> Alamat</th>
-                    <th><i class="icon_pin_alt"></i> Status</th>
-                    <th><i class="icon_cogs"></i> Action</th>
+                    <th><i class=""></i> Nama</th>
+                    <th><i class=""></i> Email</th>
+                    <th><i class=""></i> Phone</th> 
+                    <th><i class=""></i> Seminar</th>
+                    <th><i class=""></i> Tanggal</th>
+                    <th><i class=""></i> Harga</th>
+                    <th><i class=""></i> Alamat</th>
+                    <th><i class=""></i> Status</th>
+
                   </tr>
                   <?php $no = 1; ?>
                   @foreach( $daftar as $data ) 
@@ -39,14 +42,13 @@
                     <td><?php echo $no++;?></td>
                     <td>{{ $data->name }}</td>
                     <td>{{ $data->email }}</td>
-                    <td>{{ $data->mobile_number }}</td>
+                    <td>{{ $data->mobile_number }}</td>  
+                    <td>{{ $data->judul }}</td>  
+                    <td>{{ $data->created_at }}</td>                   
+                     <td>{{ $data->harga }}</td>                     
                     <td>{{ $data->alamat }}</td>
                     <td>{{ $data->status_pembayaran }}</td>
-                    <td width="150px">
-                      <div class="btn-group" style="float: left;">
-                        <a class="btn btn-success" href="/detail_registration/{{ $data->id }}" title="Detail"><i class="icon_plus_alt2"></i></a>
-                      </div>
-                    </td>
+ 
                   </tr>
                   @endforeach
                 </tbody>

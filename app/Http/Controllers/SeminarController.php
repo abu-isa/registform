@@ -75,6 +75,9 @@ class SeminarController extends Controller
     {
         $update = Seminar::where('id', $request->id)->first();
         $update->judul      = $request['judul'];
+        $update->deskripsi      = $request['deskripsi'];
+        $update->speaker      = $request['speaker'];
+        $update->moderator      = $request['moderator'];
         $update->tanggal    = $request['tanggal'];
         $update->harga      = $request['harga'];
         $update->status     = $request['status'];

@@ -32,6 +32,18 @@
                     <input type="text" class="form-control" id="judul" name="judul" value="{{ $seminar->judul }}">
                   </div>
                   <div class="form-group col-sm-6">
+                    <label for="deskripsi">Deskripsi</label>
+                    <textarea class="form-control" id="deskripsi" name="deskripsi"><?= $seminar->deskripsi; ?></textarea>
+                  </div>                  
+                  <div class="form-group col-sm-6">
+                    <label for="speaker">Speaker</label>
+                    <textarea class="form-control" id="deskripsi" name="speaker"><?= $seminar->speaker; ?></textarea>
+                  </div>                  
+                  <div class="form-group col-sm-6">
+                    <label for="moderator">Moderator</label>
+                    <textarea class="form-control" id="moderator" name="moderator"><?= $seminar->moderator; ?></textarea>
+                  </div>
+                  <div class="form-group col-sm-6">
                     <label for="tanggal">Date</label>
                     <input type="date" class="form-control" id="tanggal" name="tanggal" value="{{ $seminar->tanggal }}">
                   </div>

@@ -16,12 +16,14 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/','ShowseminarController@showhome');
 
 Route::get('/seminar',function(){
-	return view('seminar');
+ return view('seminar');
 });
 
 // Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/detail/{id}','ShowseminarController@detail');
 Route::get('/daftar','ShowseminarController@show');
+Route::get('/daftar_id/{id}','ShowseminarController@showdetail');
 Route::post('/create','AdddataController@insert');
 Route::get('/delete','DeleteseminarController@show');
 Route::get('hapus/{id}','DeleteseminarController@destroy');
@@ -47,7 +49,7 @@ Route::get('/listregistration','RegistrationController@index');
 Route::get('/detail_registration/{id}','RegistrationController@show');
 //report
 Route::get('/report','ReportController@index');
-Route::post('/search_report','SeminarController@store');
+Route::post('/search_report','ReportController@store');
 Route::get('/result_searchreport','ReportController@index');
 
 // Route::post('save','AdddataController@insertdatabase');

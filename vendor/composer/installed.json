@@ -484,17 +484,17 @@
     },
     {
         "name": "fzaninotto/faker",
-        "version": "v1.9.1",
-        "version_normalized": "1.9.1.0",
+        "version": "v1.9.2",
+        "version_normalized": "1.9.2.0",
         "source": {
             "type": "git",
             "url": "https://github.com/fzaninotto/Faker.git",
-            "reference": "fc10d778e4b84d5bd315dad194661e091d307c6f"
+            "reference": "848d8125239d7dbf8ab25cb7f054f1a630e68c2e"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/fc10d778e4b84d5bd315dad194661e091d307c6f",
-            "reference": "fc10d778e4b84d5bd315dad194661e091d307c6f",
+            "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/848d8125239d7dbf8ab25cb7f054f1a630e68c2e",
+            "reference": "848d8125239d7dbf8ab25cb7f054f1a630e68c2e",
             "shasum": ""
         },
         "require": {
@@ -505,7 +505,7 @@
             "phpunit/phpunit": "^4.8.35 || ^5.7",
             "squizlabs/php_codesniffer": "^2.9.2"
         },
-        "time": "2019-12-12T13:22:17+00:00",
+        "time": "2020-12-11T09:56:16+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1164,17 +1164,17 @@
     },
     {
         "name": "monolog/monolog",
-        "version": "1.25.5",
-        "version_normalized": "1.25.5.0",
+        "version": "1.26.0",
+        "version_normalized": "1.26.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/Seldaek/monolog.git",
-            "reference": "1817faadd1846cd08be9a49e905dc68823bc38c0"
+            "reference": "2209ddd84e7ef1256b7af205d0717fb62cfc9c33"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/Seldaek/monolog/zipball/1817faadd1846cd08be9a49e905dc68823bc38c0",
-            "reference": "1817faadd1846cd08be9a49e905dc68823bc38c0",
+            "url": "https://api.github.com/repos/Seldaek/monolog/zipball/2209ddd84e7ef1256b7af205d0717fb62cfc9c33",
+            "reference": "2209ddd84e7ef1256b7af205d0717fb62cfc9c33",
             "shasum": ""
         },
         "require": {
@@ -1190,7 +1190,7 @@
             "graylog2/gelf-php": "~1.0",
             "php-amqplib/php-amqplib": "~2.4",
             "php-console/php-console": "^3.1.3",
-            "php-parallel-lint/php-parallel-lint": "^1.0",
+            "phpstan/phpstan": "^0.12.59",
             "phpunit/phpunit": "~4.5",
             "ruflin/elastica": ">=0.90 <3.0",
             "sentry/sentry": "^0.13",
@@ -1209,13 +1209,8 @@
             "ruflin/elastica": "Allow sending log messages to an Elastic Search server",
             "sentry/sentry": "Allow sending log messages to a Sentry server"
         },
-        "time": "2020-07-23T08:35:51+00:00",
+        "time": "2020-12-14T12:56:38+00:00",
         "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.0.x-dev"
-            }
-        },
         "installation-source": "dist",
         "autoload": {
             "psr-4": {
@@ -2864,8 +2859,8 @@
     },
     {
         "name": "symfony/event-dispatcher",
-        "version": "v3.4.46",
-        "version_normalized": "3.4.46.0",
+        "version": "v3.4.47",
+        "version_normalized": "3.4.47.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/event-dispatcher.git",
@@ -3115,17 +3110,17 @@
     },
     {
         "name": "symfony/polyfill-ctype",
-        "version": "v1.20.0",
-        "version_normalized": "1.20.0.0",
+        "version": "v1.22.0",
+        "version_normalized": "1.22.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/polyfill-ctype.git",
-            "reference": "f4ba089a5b6366e453971d3aad5fe8e897b37f41"
+            "reference": "c6c942b1ac76c82448322025e084cadc56048b4e"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/f4ba089a5b6366e453971d3aad5fe8e897b37f41",
-            "reference": "f4ba089a5b6366e453971d3aad5fe8e897b37f41",
+            "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/c6c942b1ac76c82448322025e084cadc56048b4e",
+            "reference": "c6c942b1ac76c82448322025e084cadc56048b4e",
             "shasum": ""
         },
         "require": {
@@ -3134,11 +3129,11 @@
         "suggest": {
             "ext-ctype": "For best performance"
         },
-        "time": "2020-10-23T14:02:19+00:00",
+        "time": "2021-01-07T16:49:33+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-main": "1.20-dev"
+                "dev-main": "1.22-dev"
             },
             "thanks": {
                 "name": "symfony/polyfill",
@@ -3179,17 +3174,17 @@
     },
     {
         "name": "symfony/polyfill-mbstring",
-        "version": "v1.20.0",
-        "version_normalized": "1.20.0.0",
+        "version": "v1.22.0",
+        "version_normalized": "1.22.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/polyfill-mbstring.git",
-            "reference": "39d483bdf39be819deabf04ec872eb0b2410b531"
+            "reference": "f377a3dd1fde44d37b9831d68dc8dea3ffd28e13"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/39d483bdf39be819deabf04ec872eb0b2410b531",
-            "reference": "39d483bdf39be819deabf04ec872eb0b2410b531",
+            "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/f377a3dd1fde44d37b9831d68dc8dea3ffd28e13",
+            "reference": "f377a3dd1fde44d37b9831d68dc8dea3ffd28e13",
             "shasum": ""
         },
         "require": {
@@ -3198,11 +3193,11 @@
         "suggest": {
             "ext-mbstring": "For best performance"
         },
-        "time": "2020-10-23T14:02:19+00:00",
+        "time": "2021-01-07T16:49:33+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-main": "1.20-dev"
+                "dev-main": "1.22-dev"
             },
             "thanks": {
                 "name": "symfony/polyfill",

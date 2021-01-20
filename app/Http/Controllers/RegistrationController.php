@@ -14,8 +14,11 @@ class RegistrationController extends Controller
 {
     public function index()
     {
-        // $registration = DB::table('form')->get();
-        $registration = Registration::all();        
+        // $registration = Registration::all(); 
+        $registration = DB::table('forms')
+        ->join('seminars', 'seminars.id', '=', 'forms.pilihan')
+        ->select('*')
+        ->get();
         return view('admin.registration.registration', ['daftar' => $registration]);
     }
 

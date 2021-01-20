@@ -11,11 +11,27 @@ use App\Http\Requests;
 class ShowseminarController extends Controller
 {
     public function show(){
-    	$currentDay = date('d');
-    	$currentMonth = date('m');
+        $currentDay = date('d');
+        $currentMonth = date('m');
         $dateDay = date('Y-m-d');
         $data = DB::table('seminars')->select('judul','tanggal','id')->where('tanggal','>',$dateDay)->where('status','1')->orderBy('tanggal', 'asc')->get();
         return view('daftarseminar',['data' => $data]);
+    }
+    public function showdetail(Request $request){
+        $data = DB::table('seminars')
+                    ->select('judul','tanggal','images','id','deskripsi','speaker','moderator')
+                    ->where('id',$request->id)
+                    ->get();
+        return view('daftardetailseminar',['data' => $data]);
+    }
+
+    public function detail(Request $request, $id){
+       
+        $detail = DB::table('seminars')
+                        ->select('judul','tanggal','images','id','deskripsi','speaker','moderator')
+                        ->where('id',$id)
+                        ->get();
+        return view('halamandetail',['detail' => $detail]);
     }
 
     public function showsuccess(Request $request, $id){
