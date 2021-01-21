@@ -13,17 +13,16 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-		<noscript>
-			<link rel="stylesheet" href="{{ asset('css/skel.css') }}" />
-			<link rel="stylesheet" href="{{ asset('css/style.css') }}" />
-			<link rel="stylesheet" href="{{ asset('css/style-xlarge.css') }}" />
-		</noscript>
+		<link rel="stylesheet" href="{{ asset('css/skel.css') }}" />
+		<link rel="stylesheet" href="{{ asset('css/style.css') }}" />
+		<link rel="stylesheet" href="{{ asset('css/style-xlarge.css') }}" />
+		
 	</head>
 	<body id="top">
 
 		<!-- Header -->
 		<header id="header" class="skel-layers-fixed">
-		<img src="images/logo-jp1.jpg" style="padding-left: 10px; padding-top: 10px; padding-bottom: 10px;" alt="logo">
+		<img src="{{ asset('images/logo-jp1.jpg') }}" style="padding-left: 10px; padding-top: 10px; padding-bottom: 10px;" alt="logo">
 
 <!-- 			<h1><a href="/">The Jakarta Post</a></h1> -->
 
@@ -56,9 +55,9 @@
 			<div class="container">
 				<div class="row">
 					@foreach($detail as $seminar)
-						<div class="4u">
+						<div class="col-sm-12">
 							<section class="special box">
-							<img src="{{ url('uploads') }}/{{ $seminar->images }}" class="img-responsive" width="100px" height="100px">
+							<img src="{{ url('uploads') }}/{{ $seminar->images }}" class="img-responsive"  width="500px" height="400px">
 								<h3>{{ $seminar->judul }}</h3>
 								<p>{{ $seminar->tanggal }}</p>
 								<p>{{ $seminar->speaker }}</p>
